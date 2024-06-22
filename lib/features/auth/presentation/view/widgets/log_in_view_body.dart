@@ -82,9 +82,9 @@ class LogInViewBody extends StatelessWidget {
                         textColor: Colors.white,
                         borderRadius:
                             const BorderRadius.all(Radius.circular(8)),
-                        onPressed: () async {
+                        onPressed: () {
                           if (formkey.currentState!.validate()) {
-                            await BlocProvider.of<AuthCubit>(context)
+                            BlocProvider.of<AuthCubit>(context)
                                 .fetchUserDetails(
                                     userName: userName, password: password);
                             context.go(AppRouter.tasksPage);
